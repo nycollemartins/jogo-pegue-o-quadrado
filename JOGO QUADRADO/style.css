@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #999cf5;
+    border: 2px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.square {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #ed1818;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.square:hover {
+    background-color: #cd0707;
+}
+
+@keyframes moveSquare {
+    0% { top: 0; left: 0; }
+    25% { top: 0; left: calc(100% - 100px); }
+    50% { top: calc(100% - 100px); left: calc(100% - 100px); }
+    75% { top: calc(100% - 100px); left: 0; }
+    100% { top: 0; left: 0; }
+}
+
+.square {
+    animation: moveSquare 2s infinite;
+}
